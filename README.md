@@ -106,12 +106,6 @@ git push heroku master
 ----------------------------------------------------
 
 # Sección09
-
-```
-nodemon server -e js,hbs,html,css
-```
-###### Descripcion: Se levanta un servidor http en el localhost:8080 y al utilizar el -e se le indica luego que tipo de archivos necesitamos que quede escuchando por cambios y actualizar
-
 -----------------------------------------------------------------------------
 ## [Mongoose] ([LINK](https://mongoosejs.com/docs/guide.html))
 <b>Es un paquete que nos ayuda a realizar la conexión de NodeJS con MongoDB</b>
