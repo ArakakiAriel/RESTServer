@@ -28,6 +28,15 @@
     a. Eliminado físico de la base de datos
     b. Eliminación por estado en un campo de la colección
 
+(Seccion10)
+- Introducción a los tokens
+- JWT
+- Login personalizado
+- Protección de rutas vía token
+- Leer payload del token sin la firma
+- Tips importantes para POSTMan
+- Despliegues en Heroku para pruebas en producción
+- Uso de Middleware
 -----------------------------------------------------------------------------
 
 ```
@@ -41,6 +50,10 @@ nodemon server -e js,hbs,html,css
 <b>Es una base de datos No Relacional </b>
 
 #### Instalacion:[https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+
+
+
+- Así se levanta localmente: ```mongod --dbpath \MongoDB/database```
 
 -----------------------------------------------------------------------------
 
@@ -147,12 +160,17 @@ git push heroku master
 (Falta completar)
 
 
+----------------------------------------------------
+----------------------------------------------------
 
+# Sección10
+-----------------------------------------------------------------------------
 
+## Tokens
+- Un token es un elemento virtual o físico que se utiliza para poder logearse o entrar en una página o lugar físico
 
+-----------------------------------------------------------------------------
 
-
-
-
+## [JWT] ([LINK](https://jwt.io))
 
 

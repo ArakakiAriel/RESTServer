@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false })); //Middleware cuando es app.
 app.use(bodyParser.json())
 //De esta forma utilizamos el controlador de GET POST PUT DELETE
 app.use(require('./routes/user'));
-mongoose.connect('mongodb://localhost:27017/cuentas',
+mongoose.connect(process.env.URLDB,
         {useNewUrlParser:true, useCreateIndex:true}, //Configuraciones a la hora de hacer la conexion a mongo
         (err, res) => {
     if(err) throw err;
