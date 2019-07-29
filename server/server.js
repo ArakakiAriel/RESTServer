@@ -8,10 +8,14 @@ const app = express();
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false })); //Middleware cuando es app.use
+
 // parse application/json
-app.use(bodyParser.json())
-//De esta forma utilizamos el controlador de GET POST PUT DELETE
-app.use(require('./routes/user'));
+app.use(bodyParser.json());
+
+//Configuracion globar de rutas
+app.use(require('./routes/index'));
+
+
 mongoose.connect(process.env.URLDB,
         {useNewUrlParser:true, useCreateIndex:true}, //Configuraciones a la hora de hacer la conexion a mongo
         (err, res) => {
