@@ -20,7 +20,8 @@ app.post('/login', (req, res) => {
                 });
             }
 
-            if(!userDB){
+            //Valido que el usuario se encuentre en la base de datos y que sea un usuario activo
+            if(!userDB || !userDB.state){
                 return res.status(400).json({
                     ok:false,
                     err: {

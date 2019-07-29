@@ -15,7 +15,6 @@ app.use(bodyParser.json());
 //Configuracion globar de rutas
 app.use(require('./routes/index'));
 
-
 mongoose.connect(process.env.URLDB,
         {useNewUrlParser:true, useCreateIndex:true}, //Configuraciones a la hora de hacer la conexion a mongo
         (err, res) => {
@@ -24,6 +23,9 @@ mongoose.connect(process.env.URLDB,
     console.log('Base de datos: ' + 'ONLINE'.green);
 
 });
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+
 
 app.listen(process.env.PORT, () => {
     console.log("Escuchando en el puerto", process.env.PORT);

@@ -3,10 +3,11 @@ const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const app = express();
 const User = require('../models/user');
+const {verifyToken, verifyAdminRole} = require('../middlewares/authentication');
 
 const activeUsers = {state:true}
 //Obtener registros
-app.get('/usuario', (req, res) => {
+app.get('/usuario', verifyToken, (req, res) => {
 
     /*Los valores que se encuentren dentro de req.query son enviados en la url de la forma ?limite=valor&desde=otrovalor */
     let desde = Number.parseInt(req.query.desde) || 0;
@@ -78,12 +79,13 @@ app.post('/usuario', (req, res) => {
 });
 
 //Actualizar registros  
-app.put('/usuario/:id1', (req, res) => {
+app.put('/usuario/:id1',verifyToken, (req, res) => {
     let id = req.params.id1; //De esta forma podemos pasar parametros desde la url y almacenarlos en una variable
-    let body = _.pick(req.body, ['nombre','img','email','role', 'state']);
-
+    let body = _.pick(req.body, ['user','img','email','role', 'state']);
+   
     //Ver la documentacion https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
-    User.findByIdAndUpdate(id, body, {new:true, runValidators: true}, (err, userDB) => {
+    //context: 'query' (Sirve para que el runValidators no rompa con los campos definidos como unique)
+    User.findByIdAndUpdate(id, body, {new:true, runValidators: true, context: 'query'}, (err, userDB) => {
         if(err) {
             return res.status(400).json({
                 ok:false,
@@ -100,10 +102,28 @@ app.put('/usuario/:id1', (req, res) => {
 });
 
 //Borrar o cambiar estado de registros para que no este disponible (Hoy día ya no se borran registros, se cambia un flag)
-app.delete('/usuario/:id', (req, res) => {
+app.delete('/usuario/:id',verifyToken, (req, res) => {
     let id = req.params.id;
-    User.findByIdAndUpdate(id, {state: false}, {new:true}, (err, userDB) => {
-        if(err) {
+    return findUserAndDelete(id, res);
+});
+
+//Si es usuario con rol de admin podrá eliminar a otro usuario cualquiera
+app.delete('/usuario', [verifyToken, verifyAdminRole], (req, res) => {
+    let id = req.body.id;
+    return findUserAndDelete(id, res);
+});
+
+let findUserAndDelete = ((id, res) => {
+    if(id === undefined){
+        return res.status(400).json({
+            ok:false,
+            err: {
+                message: 'No se ha indicado a qué usuario eliminar'
+            }
+        });
+    }
+    User.findByIdAndUpdate(id, {state: false}, (err, userDB) => {
+        if(err){
             return res.status(400).json({
                 ok:false,
                 err
@@ -120,7 +140,7 @@ app.delete('/usuario/:id', (req, res) => {
                 message: `El usuario ${userDB.user} ya se encuentra dado de baja`
             });
         }
-    })
+    });
 });
 
 module.exports = app;

@@ -14,7 +14,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 //========================
 //  Vencimiento de Token
 //========================
-process.env.CADUCATE_TOKEN = 60 * 60;
+process.env.CADUCATE_TOKEN = 60 * 60 * 10000;
 
 
 //=========================
