@@ -120,11 +120,11 @@ git push heroku master
 ### Siempre sirve:
 
 - En caso de que necesitemos declarar variables de configuraciones en heroku podemos poner lo siguiente:
-```heroku config:set SEED="production-token-seed"```
+    ```heroku config:set SEED="production-token-seed"```
  #### heroku config:set NOMBRE_PARAMETRO="Valor-del-parametro"
 
 - En caso de que querramos ver las variables de configuraciones creadas utilizamos el siguiente código:
-```heroku config```
+    ```heroku config```
  
 
 ----------------------------------------------------
