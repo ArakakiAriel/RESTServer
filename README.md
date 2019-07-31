@@ -39,7 +39,7 @@
 - Uso de Middleware
 -----------------------------------------------------------------------------
 
-```
+```git
 nodemon server -e js,hbs,html,css
 ```
 ###### Descripcion: Se levanta un servidor http en el localhost:8080 y al utilizar el -e se le indica luego que tipo de archivos necesitamos que quede escuchando por cambios y actualizar
@@ -75,12 +75,12 @@ nodemon server -e js,hbs,html,css
 <p>Los parciales simplifican la repeticion de codigo al crear archivos .hbs</p>
 
 1. En nuestro server.js escribimos para registrar los parciales
-```
+```js
 hbs.registerPartials(__dirname + '/views/partials');
 ```
 2. Luego creamos una carpeta contenedora /views/partials en donde vamos a crear nuestros archivos hbs
 3. Para llamar a los hbs que van a ser nuestras páginas (que se encuentran dentro de /views) se las llaman de la siguiente manera dentro de server.js
-```
+```js
 app.get('/', (req, res) => {
     res.render('home', {
         nombre: "Kenji",
@@ -93,7 +93,7 @@ app.get('/', (req, res) => {
 <p>Los helpers son funciones del HBS que se disparan cuando el template lo requiera</p>
 
 - Se declaran las funciones en una clase helpers.js de la siguiente manera
-```
+```js
 hbs.registerHelper('getAnio', () => {
     return new Date().getFullYear();
 });
@@ -108,7 +108,7 @@ hbs.registerHelper('getAnio', () => {
 ```heroku login```
 
 2. Nos paramos sobre el branch y ponemos:
-```
+```git
 heroku git:remote -a kenjiman-webpage
 git push heroku master
 ```
@@ -120,14 +120,13 @@ git push heroku master
 ### Siempre sirve:
 
 - En caso de que necesitemos declarar variables de configuraciones en heroku podemos poner lo siguiente:
+```git
+heroku config:set NOMBRE_PARAMETRO="Valor-del-parametro"
 ```
-heroku config:set SEED="production-token-seed"
-###### heroku config:set NOMBRE_PARAMETRO="Valor-del-parametro"
-```
-
 - En caso de que querramos ver las variables de configuraciones creadas utilizamos el siguiente código:
-    ```heroku config```
- 
+```git
+heroku config
+```
 
 ----------------------------------------------------
 ----------------------------------------------------
@@ -220,7 +219,7 @@ heroku config:set SEED="production-token-seed"
    - Guardamos estos datos en un archivo de texto para su posterior uso
 5. Para conectarnos al cluster vamos a Atlas -> Cluster -> Connect(Al cluster creado previamente) -> Connect with MongoDB Compass
    - Nos copiamos el string que nos de de conexion y lo agregamos al archivo de texto donde guardamos el usuario y pass
-   -En donde diga <password> cambiamos con la password que autogeneramos.
+   -En donde diga >password< cambiamos con la password que autogeneramos.
 6. Es necesario tener MongoDB Compass instalado en sus maquinas (Fijarse algun instructivo de como instalarlo)
    - Una vez abierto el MongoDB Compass vamos a New Connection y completamos:
      - Hostname: Sacamos del string de conexiones desde el @ hasta el .net (EJ: cluster0-xvaow.mongodb.net)
