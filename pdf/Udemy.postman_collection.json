@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "20805dcf-bb81-4eb3-b091-6ab1cf7dbc8d",
+		"name": "Udemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Llevo mis cuentas Udemy",
+			"item": [
+				{
+					"name": "POST: Crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "pepa",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pepa@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "newpass",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "USER_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "google",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/usuario/?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario",
+								""
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "kenjiman",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "ari_kenji@hotmail.com",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "unapass",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Creamos un usuario de BD"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT: Actualizar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "kenjiman",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "kenjiman59@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/usuario/5d3b17856452c67633fff9e6?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario",
+								"5d3b17856452c67633fff9e6"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "5d3859a88189e549a2feb41a",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET: Obtener usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"name": "Content-Type",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "kenjiman",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "26",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "ari_kenji@hotmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/usuario",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET: Obtener usuarios",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user",
+											"value": "kenjiman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "26",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "ari_kenji@hotmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/usuario/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"usuario",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2151"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"867-vQ8eUr55LJKaPoTQzO6E1tojYsg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2019 13:26:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"users\": [\n        {\n            \"role\": \"ADMIN_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375d1c6c456b6b7b2068fd\",\n            \"user\": \"kenjiman\",\n            \"email\": \"kenjiman59@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375d7a3327726dc6e8fcaf\",\n            \"user\": \"lala\",\n            \"email\": \"lala@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375e25e6a4c870243e6294\",\n            \"user\": \"user\",\n            \"email\": \"user@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375e55e8769970ea2425f8\",\n            \"user\": \"user2\",\n            \"email\": \"user2@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859998189e549a2feb419\",\n            \"user\": \"user22\",\n            \"email\": \"user22sad1@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859a88189e549a2feb41a\",\n            \"user\": \"user33\",\n            \"email\": \"user33@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859ae8189e549a2feb41b\",\n            \"user\": \"user4\",\n            \"email\": \"user43@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859b58189e549a2feb41c\",\n            \"user\": \"user5\",\n            \"email\": \"user5@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859bd8189e549a2feb41d\",\n            \"user\": \"user6\",\n            \"email\": \"user6@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859c18189e549a2feb41e\",\n            \"user\": \"user7\",\n            \"email\": \"user7@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859c58189e549a2feb41f\",\n            \"user\": \"user8\",\n            \"email\": \"user8@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859ca8189e549a2feb420\",\n            \"user\": \"user9\",\n            \"email\": \"user9@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b18000682018ab66719\",\n            \"user\": \"user93\",\n            \"email\": \"user93@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b1b000682018ab6671a\",\n            \"user\": \"user932\",\n            \"email\": \"user932@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b1e000682018ab6671b\",\n            \"user\": \"user9324\",\n            \"email\": \"user9324@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b22000682018ab6671c\",\n            \"user\": \"user93245\",\n            \"email\": \"user93245@gmail.com\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE: Dat de baja usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "5d43401ade262f00170d6305",
+									"type": "text"
+								},
+								{
+									"key": "google",
+									"value": "false",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "USER_ROLE",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/usuario/?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuario",
+								""
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "5d3859a88189e549a2feb41a",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST: Login de usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c9221fd7-3874-46e7-a14e-f7a042251796",
+								"exec": [
+									"",
+									"let resp = pm.response.json();",
+									"if(resp.ok){",
+									"    let token = resp.token;",
+									"pm.environment.set(\"token\", token); //Con esto podemos actualizar la variable de entorno \"token\" con un token nuevo una vez ejecutamos el login de usuarios ",
+									"",
+									"}else{",
+									"    console.log('No se pudo actualizar el token');",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "kenjiman",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "26",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "ari_kenji@hotmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "kjkszpj",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET: Obtener usuarios",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user",
+											"value": "kenjiman",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "age",
+											"value": "26",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "ari_kenji@hotmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/usuario/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"usuario",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2151"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"867-vQ8eUr55LJKaPoTQzO6E1tojYsg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2019 13:26:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"users\": [\n        {\n            \"role\": \"ADMIN_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375d1c6c456b6b7b2068fd\",\n            \"user\": \"kenjiman\",\n            \"email\": \"kenjiman59@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375d7a3327726dc6e8fcaf\",\n            \"user\": \"lala\",\n            \"email\": \"lala@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375e25e6a4c870243e6294\",\n            \"user\": \"user\",\n            \"email\": \"user@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d375e55e8769970ea2425f8\",\n            \"user\": \"user2\",\n            \"email\": \"user2@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859998189e549a2feb419\",\n            \"user\": \"user22\",\n            \"email\": \"user22sad1@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859a88189e549a2feb41a\",\n            \"user\": \"user33\",\n            \"email\": \"user33@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859ae8189e549a2feb41b\",\n            \"user\": \"user4\",\n            \"email\": \"user43@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859b58189e549a2feb41c\",\n            \"user\": \"user5\",\n            \"email\": \"user5@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859bd8189e549a2feb41d\",\n            \"user\": \"user6\",\n            \"email\": \"user6@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859c18189e549a2feb41e\",\n            \"user\": \"user7\",\n            \"email\": \"user7@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859c58189e549a2feb41f\",\n            \"user\": \"user8\",\n            \"email\": \"user8@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d3859ca8189e549a2feb420\",\n            \"user\": \"user9\",\n            \"email\": \"user9@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b18000682018ab66719\",\n            \"user\": \"user93\",\n            \"email\": \"user93@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b1b000682018ab6671a\",\n            \"user\": \"user932\",\n            \"email\": \"user932@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b1e000682018ab6671b\",\n            \"user\": \"user9324\",\n            \"email\": \"user9324@gmail.com\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"USER_ROLE\",\n            \"google\": false,\n            \"state\": true,\n            \"_id\": \"5d385b22000682018ab6671c\",\n            \"user\": \"user93245\",\n            \"email\": \"user93245@gmail.com\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "City-GeoLocation test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php?location=New+York\"",
+					"protocol": "https",
+					"host": [
+						"devru-latitude-longitude-find-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"latlon.php"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "New+York\""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

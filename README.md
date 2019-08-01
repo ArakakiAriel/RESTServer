@@ -9,7 +9,7 @@
   b. PUT
   c. POST
   d. DELETE
-* Aprender sobre códigos de error HTTP (info en  pdf/http-response-codes.pdf)
+* Aprender sobre códigos de error HTTP (info en  extras/http-response-codes.pdf)
 * Códigos de error en Express
 * Archivos para la configuracion global
 * Tips importantes en Postman
@@ -178,6 +178,8 @@ heroku config
 
 # Sección10
 -----------------------------------------------------------------------------
+
+- <b> Se puede importar en el postman el archivo Udemy.postman_collection.json en la carpeta extras </b>
 
 ## Tokens
 - Un token es un elemento virtual o físico que se utiliza para poder logearse o entrar en una página o lugar físico
