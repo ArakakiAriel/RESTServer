@@ -1,5 +1,6 @@
 const colors = require('colors');
 const mongoose = require('mongoose');
+const path = require('path'); //Sirve para poder utilizar paths dentro de nuestro código
 const express = require('express');
 const bodyParser = require('body-parser');
 require('./config/config'); //Archivo de configuraciones, de esta forma se levanta automáticamente y lo corre
@@ -11,6 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false })); //Middleware cuando es app.
 
 // parse application/json
 app.use(bodyParser.json());
+
+//Habilitar la carpeta public
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 //Configuracion globar de rutas
 app.use(require('./routes/index'));

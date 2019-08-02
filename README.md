@@ -37,6 +37,15 @@
 - Tips importantes para POSTMan
 - Despliegues en Heroku para pruebas en producción
 - Uso de Middleware
+
+(Sección11)
+- Generar API Key de Google
+- Generar API Secret
+- Usar librerías de Google para la validación de tokens
+- Tips importantes en PostMan
+- Despliegues a Heroku
+- Uso del Google SignIn en el Front-End
+- Crear usuarios personalizados en base a respuestas de Google
 -----------------------------------------------------------------------------
 
 ```git
@@ -179,9 +188,9 @@ heroku config
 # Sección10
 -----------------------------------------------------------------------------
 
-- <b> Se puede importar en el postman el archivo Udemy.postman_collection.json en la carpeta extras </b>
+- <b> Se puede importar en el postman el archivo Udemy.postman_collection.json en la carpeta extras </b> (Va a tener las consultas a la base necesario para poder utilizar el servicio)
 
-## Tokens
+## [Tokens]
 - Un token es un elemento virtual o físico que se utiliza para poder logearse o entrar en una página o lugar físico
 
 -----------------------------------------------------------------------------
@@ -191,6 +200,24 @@ heroku config
 - Se utiliza en la clase server/routes/login.js 
 
 #### Instalacion: ```npm i jsonwebtoken --save ```
+
+
+----------------------------------------------------
+----------------------------------------------------
+
+# Sección11
+
+## [Google Sign-In] [LINK](https://developers.google.com/identity/sign-in/web/sign-in)
+- <b>Utilizaremos Google Sign-In para agregarle la validación por correo electrónico de gmail</b>
+
+### Configuración:
+- En la página linkeada, tocamos el botón de "CONFIGURE A PROJECT" y agregamos un nuevo projecto con el nombre que querramos y el OAuth client será llamado desde un "Web browser" en este caso y la url autorizada será "http://localhost".
+- Una vez creado nos dará un link que dice "API Console", lo clickeamos.
+- Vamos a credenciales y si ya existen credenciales creadas las borramos y creamos una nueva de "ID de cliente de OAuth".
+- En las configuraciones de dicha credencial indicaremos un nombre cualquiera y le configuramos en la whitelist nuestro http://localhost:(PUERTO_QUE_ESTEMOS_UTILIZANDO)
+
+
+#### Instalacion: ```npm install google-auth-library --save```
 
 
 

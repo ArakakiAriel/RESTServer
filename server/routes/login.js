@@ -53,6 +53,15 @@ app.post('/login', (req, res) => {
 
 });
 
+//Se agrega en el login otra ruta para poder realizar el google sign in
+app.post('/google', (req, res) => {
 
+    let token = req.body.idtoken;
+    res.json({
+        token
+    });
+
+
+});
 
 module.exports = app;
